@@ -6,7 +6,7 @@ body {
 
 header {
   text-align: center;
-  background: linear-gradient(45deg, red, slategrey, red);
+  background: linear-gradient(45deg, rgb(138, 58, 21), rgb(63, 63, 243), rgb(133, 15, 15));
   mix-blend-mode: color;
   mix-blend-mode: hard-light;
 }
@@ -50,10 +50,10 @@ input {
   text-align: center;
 }
 button {
-  border: solid 0.5px slategrey;
+  border: solid 0.5px white;
   border-radius: 50px;
   margin-left: 5px;
-  background-color: powderblue;
+  background-color: papayawhip;
 }
 .search {
   height: 20px;
