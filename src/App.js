@@ -10,6 +10,7 @@ class App extends React.Component {
     search: '',
     isLoading: 'false',
     pokeState: []
+    
   }
 
   componentDidMount = async () => {
@@ -35,7 +36,6 @@ class App extends React.Component {
         <Header />
         <main>
           <Search search={this.searchValue} click={this.handleSubmit} />
-          {console.log(this.state.pokeState)}
           <PokemonList pokemons={this.state.pokeState} />
         </main>
       </body>

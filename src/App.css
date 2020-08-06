@@ -1,14 +1,26 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background-color: whitesmoke;
+  background-color: rgb(255, 247, 255);
 }
 
 header {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(45deg, rgb(138, 58, 21), rgb(63, 63, 243), rgb(133, 15, 15));
   mix-blend-mode: color;
   mix-blend-mode: hard-light;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: 1.5px;
+}
+
+.pokeball {
+  height: 75px;
+  width: 75px;
 }
 
 main {
@@ -33,6 +45,7 @@ ul {
 img {
   height: 150px;
   width: 150px;
+  filter: saturate(130%) contrast(115%) drop-shadow(5px 5px 3px);
 }
 
 .searchBar {
@@ -63,6 +76,13 @@ button {
 
 li {
   text-align: center;
+  border: solid 1px rgb(197, 196, 196);
+  background-color: rgb(255, 247, 247);
+}
+
+p {
+  font-size: .5rem;
+  font-style: italic;
 }
 
 .App-logo {

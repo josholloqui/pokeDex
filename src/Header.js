@@ -4,7 +4,8 @@ class Header extends React.Component {
     render() { 
         return (
             <header>
-                <h1>Pokedex</h1>
+                <img className="pokeball" alt="Pokemon Ball" src="pokeball2.png"/>
+                <h1>POKEDEX</h1>
             </header>
         );
     }
