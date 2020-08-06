@@ -2,8 +2,8 @@ import React from 'react';
 import request from 'superagent';
 import Header from './Header.js';
 import './App.css';
-import Search from './Search.js';
-import PokemonList from './PokemonList.js';
+import Search from './SearchPage/Search.js';
+import PokemonList from './SearchPage/PokemonList.js';
 
 class App extends React.Component {
   state = {
