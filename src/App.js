@@ -1,46 +1,46 @@
 import React from 'react';
+import {
+  BrowserRouter as Router, 
+  Route, 
+  Switch,
+  Link,
+} from 'react-router-dom';
 import request from 'superagent';
 import Header from './Header.js';
-import './App.css';
-import Search from './SearchPage/Search.js';
-import PokemonList from './SearchPage/PokemonList.js';
+import './SearchPage/App.css';
+import SearchPage from './SearchPage/SearchPage.js';
+import DetailPage from './DetailPage/DetailPage.js'
 
 class App extends React.Component {
-  state = {
-    search: '',
-    isLoading: 'false',
-    pokeState: []
-    
-  }
-
-  componentDidMount = async () => {
-    const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=1&perPage=801`);
-    this.setState({pokeState: data.body.results})
-  }
-
-  handleSubmit = async () => {
-    this.setState({isLoading: true})
-    const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=1&perPage=801&pokemon=${this.state.search}`);
-
-    this.setState({
-      pokeState: data.body.results,
-      isLoading: false
-    })
-  }
-
-  searchValue = (e) => this.setState({ search: e.target.value})
-
   render() { 
     return (
-      <body>
-        <Header />
-        <main>
-          <Search search={this.searchValue} click={this.handleSubmit} />
-          <PokemonList pokemons={this.state.pokeState} />
-        </main>
-      </body>
-    );
-  }
+      <>
+      <div>
+            <Router>
+                <header>
+                  <Header />
+                  <nav>
+                    <Link to="/">Home</Link>
+                    <Link to="/detail">Detail</Link>
+                  </nav>
+                </header>
+                <Switch>
+                    <Route 
+                        path="/" 
+                        exact
+                        render={(routerProps) => <SearchPage {...routerProps} />} 
+                    />
+                    <Route 
+                        path="/detail/:myPokeId" 
+                        exact
+                        render={(routerProps) => <DetailPage {...routerProps} />} 
+                    />
+                </Switch>
+            </Router>
+        </div>
+        </>
+    )
+}
 }
  
 export default App;
