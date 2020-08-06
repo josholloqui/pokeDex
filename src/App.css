@@ -1,5 +1,88 @@
-.App {
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: rgb(255, 247, 255);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, rgb(138, 58, 21), rgb(63, 63, 243), rgb(133, 15, 15));
+  mix-blend-mode: color;
+  mix-blend-mode: hard-light;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: 1.5px;
+}
+
+.pokeball {
+  height: 75px;
+  width: 75px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) auto;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+div {
   text-align: center;
+}
+
+ul {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: auto;
+  list-style: none;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  filter: saturate(130%) contrast(115%) drop-shadow(5px 5px 3px);
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  border: none;
+  border-radius: 50px;
+  width: 150px;
+  height: 25px;
+  font-size: 11px;
+  text-align: center;
+}
+button {
+  border: solid 0.5px white;
+  border-radius: 50px;
+  margin-left: 5px;
+  background-color: papayawhip;
+}
+.search {
+  height: 20px;
+  width: 20px;
+  
+}
+
+li {
+  text-align: center;
+  border: solid 1px rgb(197, 196, 196);
+  background-color: rgb(255, 247, 247);
+}
+
+p {
+  font-size: .5rem;
+  font-style: italic;
 }
 
 .App-logo {
@@ -13,16 +96,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
