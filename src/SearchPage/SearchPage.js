@@ -16,8 +16,6 @@ class App extends React.Component {
   }
 
   componentDidMount = async () => {
-    const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=1&perPage=801`);
-
     const params = new URLSearchParams(this.props.location.search);
 
     const searchBy = params.get('searchBy');
@@ -32,7 +30,7 @@ class App extends React.Component {
       });
     }
 
-    this.setState({pokeState: data.body.results})
+    this.makeRequest()
   }
 
   makeRequest = async () => {
@@ -64,18 +62,35 @@ class App extends React.Component {
     await this.makeRequest()
   }
 
+  handlePrev = async () => {
+    await this.setState({ currentPage: Number(this.state.currentPage) - 1})
+
+    await this.makeRequest();
+  }
+
+  handleNext = async () => {
+    await this.setState({ currentPage: Number(this.state.currentPage) + 1})
+
+    await this.makeRequest();
+  }
+
   searchValue = (e) => this.setState({ search: e.target.value})
 
   searchParams = (e) => this.setState({ searchBy: e.target.value })
 
   render() { 
+    const {
+      pokeState,
+      currentPage,
+      totalPages
+    } = this.state;
     return (
       <body>
         <main>
           <form onSubmit={this.handleSubmit}>
-            <Search search={this.searchValue} click={this.handleSubmit} searchBy={this.searchParams}/>
+            <Search search={this.searchValue} click={this.handleSubmit} searchBy={this.searchParams} inputValue={this.state.search}/>
           </form>
-          <PokemonList pokemons={this.state.pokeState} />
+          <PokemonList pokemons={pokeState} handlePrev={this.handlePrev} handleNext={this.handleNext} currentPage={currentPage} totalPages={totalPages}/>
         </main>
       </body>
     );
