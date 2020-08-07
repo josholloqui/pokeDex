@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import request from 'superagent';
 import Header from './Header.js';
-import './SearchPage/App.css';
+// import './SearchPage/App.css';
 import SearchPage from './SearchPage/SearchPage.js';
 import DetailPage from './DetailPage/DetailPage.js'
 
@@ -20,8 +20,8 @@ class App extends React.Component {
                 <header>
                   <Header />
                   <nav>
-                    <Link to="/">Home</Link>
-                    <Link to="/detail">Detail</Link>
+                    <Link className="navLinks" to="/">Home</Link>
+                    <Link className="navLinks" to="/detail">Detail</Link>
                   </nav>
                 </header>
                 <Switch>

@@ -6,16 +6,37 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, rgb(138, 58, 21), rgb(63, 63, 243), rgb(133, 15, 15));
   mix-blend-mode: color;
   mix-blend-mode: hard-light;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
+.headerDiv {
+  display: flex;
+  align-items: center;
+}
+
 h1 {
   font-size: 2.4rem;
   letter-spacing: 1.5px;
+}
+
+.navLinks {
+  margin-left: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: .25s;
+}
+
+.navLinks:hover {
+  background-color:rgb(206, 88, 206);
+  border: none;
+  border-radius: 15px;
 }
 
 .pokeball {
@@ -55,13 +76,22 @@ img {
 }
 
 input {
-  border: none;
+  border: solid 1px grey;
   border-radius: 50px;
   width: 150px;
   height: 25px;
   font-size: 11px;
   text-align: center;
 }
+
+select {
+  border: solid 1px grey;
+  border-radius: 50px;
+  width: 150px;
+  height: 29px;
+  font-size: 11px;
+}
+
 button {
   border: solid 0.5px white;
   border-radius: 50px;
@@ -108,4 +138,9 @@ p {
   to {
     transform: rotate(360deg);
   }
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }

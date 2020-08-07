@@ -1,13 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PokemonItem extends React.Component {
     render() { 
+        const {
+            pokemon: {
+                pokemon,
+                url_image,
+                attack,
+                defense,
+                type_1
+            }
+        } = this.props;
+
         return (
             <li>
-                <img alt={this.props.pokemon.url_image} src={this.props.pokemon.url_image} />
-                <h3>{this.props.pokemon.pokemon.charAt(0).toUpperCase() + this.props.pokemon.pokemon.slice(1)}</h3>
-                <p>Attack: {this.props.pokemon.attack} - Defense: {this.props.pokemon.defense}</p>
-                <p>Type: {this.props.pokemon.type_1.charAt(0).toUpperCase() + this.props.pokemon.type_1.slice(1)}</p>
+                <Link to={`/detail/${pokemon}`} style={ {textDecoration: 'none'} } >
+                    <img alt={url_image} src={url_image} />
+                    <h3>{pokemon.charAt(0).toUpperCase() + pokemon.slice(1)}</h3>
+                    <p>Attack: {attack} - Defense: {defense}</p>
+                    <p>Type: {type_1.charAt(0).toUpperCase() + type_1.slice(1)}</p>
+                </Link>
             </li>
         );
     }
