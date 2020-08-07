@@ -5,9 +5,7 @@ import {
   Switch,
   Link,
 } from 'react-router-dom';
-import request from 'superagent';
 import Header from './Header.js';
-// import './SearchPage/App.css';
 import SearchPage from './SearchPage/SearchPage.js';
 import DetailPage from './DetailPage/DetailPage.js'
 
