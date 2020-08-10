@@ -6,7 +6,7 @@ class Search extends React.Component {
             <div className="searchDiv">
                 <h2>Search the Pokedex</h2>
                 <div className="searchBar">
-                    <input onChange={this.props.search} placeholder='Enter Pokemon Name...'/>
+                    <input onChange={this.props.search} value={this.props.inputValue}  placeholder='Enter Pokemon Name...'/>
                     <select onChange={this.props.searchBy}>
                         <option value='pokemon'>name</option>
                         <option value='type'>type</option>

@@ -18,7 +18,7 @@ class App extends React.Component {
                 <header>
                   <Header />
                   <nav>
-                    <Link className="navLinks" to="/">Home</Link>
+                    <Link className="navLinks" to="/?search=&searchBy=pokemon&page=1">Home</Link>
                     <Link className="navLinks" to="/detail">Detail</Link>
                   </nav>
                 </header>
